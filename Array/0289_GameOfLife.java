@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/game-of-life/
-// the below solutions is stil O(mn) space. It can be improved to O(1) by using 2 bits to store 2 different states of each position (current and next stage). 
+// the below solutions is stil O(mn) space. 
+// It can be improved to O(1) by using 2 bits to store 2 different states of each position (current and next stage). 
 // using 2 bits helps retained the original state of each position and facilitate the appending of the next state in the 2nd bit
 class Solution {
     public void gameOfLife(int[][] board) {
