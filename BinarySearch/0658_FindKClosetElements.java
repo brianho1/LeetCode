@@ -10,6 +10,7 @@ class Solution {
         
         List<Integer> res = new LinkedList<>();
         int r = 0;
+        // since the array is sorted, the below block can be replaced with a binary search to reduce the complexity to O(logN)
         for (int i = 0 ; i < arr.length; i++) {
             if (x <= arr[i]) {
                 r = i;
