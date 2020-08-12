@@ -3,6 +3,7 @@
 class Solution {
     public List<Integer> getRow(int rowIndex) {
         
+//         solution 1
 //         List<List<Integer>> list = new ArrayList<List<Integer>>();
 //         list.add(Arrays.asList(1));
 //         list.add(Arrays.asList(1,1));
@@ -22,14 +23,31 @@ class Solution {
 //         }
 //         return list.get(rowIndex);
         
-        List<Integer> dp = new ArrayList<>();
-        dp.add(1);
+
+        // O(k) space
+        // List<Integer> dp = new ArrayList<>();
+        // dp.add(1);
+        // for (int i = 1; i <= rowIndex; i++) {
+        //     dp.add(1);
+        //     for (int j = i-1; j >= 1; j--) {
+        //         dp.set(j, dp.get(j) + dp.get(j-1));
+        //     }
+        // }
+        // return dp;
+        
+        List<Integer> currRow = new ArrayList<>();
+        List<Integer> preRow = new ArrayList<>();
+        
+        preRow.add(1);
+        currRow.add(1);
         for (int i = 1; i <= rowIndex; i++) {
-            dp.add(1);
-            for (int j = i-1; j >= 1; j--) {
-                dp.set(j, dp.get(j) + dp.get(j-1));
+            currRow.add(1);
+            for (int j = i-1 ; j >= 1; j--) {
+                currRow.set(j, preRow.get(j) + preRow.get(j-1));
+                // System.out.println(currRow.get(j));
             }
+            preRow = currRow;
         }
-        return dp;
+        return currRow;
     }
 }
