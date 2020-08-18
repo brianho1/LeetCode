@@ -39,7 +39,7 @@ class Solution:
         
         '''
         find the shade zones if you was to fashing a light from left to right and right to left
-        the intesection of the 2 shade areas is the result
+        the intesection of the 2 shade areas (minus the height) is the result
         '''
 
         res = 0
